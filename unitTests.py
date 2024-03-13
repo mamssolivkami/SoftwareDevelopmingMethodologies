@@ -22,7 +22,7 @@ class TestAppointmentRepository(unittest.TestCase):
                                               client=client, service=service)
 
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment, [timetable])
+            self.appointment_repo.add(appointment)
 
     def test_validate_future_date_and_time(self):
         # Создаем запись с прошедшей датой и временем
@@ -38,7 +38,7 @@ class TestAppointmentRepository(unittest.TestCase):
         timetable = Timetable.Timetable(id=1, day_of_week="Понедельник", hours=["09:00 - 18:00"], master=master)
 
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment, [timetable])
+            self.appointment_repo.add(appointment)
 
     def test_validate_past_date_and_time(self):
         # Создаем запись с будущей датой и временем
@@ -54,7 +54,7 @@ class TestAppointmentRepository(unittest.TestCase):
         timetable = Timetable.Timetable(id=1, day_of_week="Понедельник", hours=["09:00 - 18:00"], master=master)
 
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment, [timetable])
+            self.appointment_repo.add(appointment)
 
     def test_validate_appointment_timing(self):
         # Создаем расписание работы мастера на понедельник с 9:00 до 18:00
@@ -65,6 +65,7 @@ class TestAppointmentRepository(unittest.TestCase):
                                   description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
                                   speciality="Ногтевой сервис", category="Профи")
         timetable = Timetable.Timetable(id=1, day_of_week="Monday", hours=["09:00 - 18:00"], master=master)
+        self.appointment_repo.timetables[1] = timetable
 
         # Создаем запись на понедельник в 10:00
         appointment = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-25 10:00",
@@ -73,9 +74,36 @@ class TestAppointmentRepository(unittest.TestCase):
 
         # Проверяем, что при вызове метода add не возникает исключений
         try:
-            self.appointment_repo.add(appointment, [timetable])
+            self.appointment_repo.add(appointment)
         except ValueError as e:
             self.fail(f"Было вызвано исключение: {e}")
+
+    def test_validate_client_appointment_relationship(self):
+        # Создаем несколько записей с одним и тем же клиентом
+        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                               speciality="Ногтевой сервис", category="Профи")
+        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
+        service = Service.Service(service_name="Маникюр",
+                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                  speciality="Ногтевой сервис", category="Профи")
+        timetable = Timetable.Timetable(id=1, day_of_week="Saturday", hours=["09:00 - 18:00"], master=master)
+        self.appointment_repo.timetables[1] = timetable
+
+        appointment1 = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-16 14:00",
+                                               master=master,
+                                               client=client, service=service)
+
+        appointment2 = Appointment.Appointment(id=2, status="Запланирована", date_and_time="2024-03-16 14:00",
+                                               master=master,
+                                               client=client, service=service)
+
+        self.appointment_repo.add(appointment1)
+        self.appointment_repo.appointments[1] = appointment1
+
+        self.appointment_repo.appointments[2] = appointment2
+
+        with self.assertRaises(ValueError):
+            self.appointment_repo.add(appointment2)
 
 
 if __name__ == '__main__':
