@@ -1,0 +1,187 @@
+<mxfile host="app.diagrams.net" modified="2024-02-26T17:36:28.318Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="_IDscW9ZSgQjAu1sfdAK" version="23.1.6" type="device">
+  <diagram name="Страница — 1" id="VuSLQorOJzWvY1r5JobV">
+    <mxGraphModel dx="1026" dy="2238" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ktbd2O4gyoknrQNmE23d-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-1" target="ktbd2O4gyoknrQNmE23d-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-1" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-2" target="ktbd2O4gyoknrQNmE23d-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-6" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Да&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-5">
+          <mxGeometry x="-0.8128" relative="1" as="geometry">
+            <mxPoint x="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-2" target="ktbd2O4gyoknrQNmE23d-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Нет&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-8">
+          <mxGeometry x="-0.608" y="1" relative="1" as="geometry">
+            <mxPoint x="-9" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-2" value="Услуга, указанная в записи, соответствует специализации мастера?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="420" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-4" target="ktbd2O4gyoknrQNmE23d-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-4" value="Запись добавлена" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-7" target="ktbd2O4gyoknrQNmE23d-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-7" value="Запись недопустима" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="700" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-12" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="910" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-16" target="ktbd2O4gyoknrQNmE23d-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-16" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="80" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-17" value="&lt;h1&gt;&lt;p class=&quot;MsoNormal&quot;&gt;Правило №1: Мастер может предоставлять услуги только в рамках своей&lt;br&gt;специализации.&lt;/p&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="-60" width="560" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-18" value="&lt;h1&gt;&lt;p class=&quot;MsoNormal&quot;&gt;Правило №2: У клиента может быть несколько записей, но каждая запись связана&lt;br&gt;только с одним клиентом.&lt;/p&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="-60" width="560" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-19" target="ktbd2O4gyoknrQNmE23d-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-19" value="Создание записи" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-21" target="ktbd2O4gyoknrQNmE23d-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-21" value="Присвоение ей одного клиента" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-23" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-24" target="ktbd2O4gyoknrQNmE23d-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-24" value="Запись добавлена" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-27" value="&lt;h1&gt;&lt;p class=&quot;MsoNormal&quot;&gt;Правило №3: Запись со статусом “Запланирована” должна иметь дату и время в&lt;br/&gt;будущем.&lt;/p&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="-60" width="580" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-40" target="ktbd2O4gyoknrQNmE23d-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-40" value="Создание записи" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-44" target="ktbd2O4gyoknrQNmE23d-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-44" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="60" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-49" target="ktbd2O4gyoknrQNmE23d-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-46" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Да&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-45">
+          <mxGeometry x="-0.8128" relative="1" as="geometry">
+            <mxPoint x="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-49" target="ktbd2O4gyoknrQNmE23d-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-48" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Нет&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-47">
+          <mxGeometry x="-0.608" y="1" relative="1" as="geometry">
+            <mxPoint x="-9" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-49" value="Дата и время записи относятся &lt;br&gt;к будущему времени?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1345" y="400" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-51" target="ktbd2O4gyoknrQNmE23d-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-51" value="Запись добавлена" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-53" target="ktbd2O4gyoknrQNmE23d-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-53" value="Запись недопустима" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1570" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-54" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="890" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-56" target="ktbd2O4gyoknrQNmE23d-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-56" value="Создание записи" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-57" value="&lt;h1&gt;&lt;p class=&quot;MsoNormal&quot;&gt;Правило №4: Дата и время в записи должны соответствовать дням и времени в&lt;br/&gt;расписании работы мастера.&lt;/p&gt;&lt;/h1&gt;" style="text;html=1;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1960" y="-60" width="580" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-59" target="ktbd2O4gyoknrQNmE23d-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-59" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2140" y="60" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-64" target="ktbd2O4gyoknrQNmE23d-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-61" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Да&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-60">
+          <mxGeometry x="-0.8128" relative="1" as="geometry">
+            <mxPoint x="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-64" target="ktbd2O4gyoknrQNmE23d-68">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-63" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Нет&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ktbd2O4gyoknrQNmE23d-62">
+          <mxGeometry x="-0.608" y="1" relative="1" as="geometry">
+            <mxPoint x="-9" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-64" value="Дата и время записи &lt;br&gt;соответствуют часам работы в расписании мастера?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2095" y="400" width="210" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-66" target="ktbd2O4gyoknrQNmE23d-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-66" value="Запись добавлена" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1960" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-68" target="ktbd2O4gyoknrQNmE23d-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-68" value="Запись недопустима" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2320" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-69" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2140" y="890" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ktbd2O4gyoknrQNmE23d-71" target="ktbd2O4gyoknrQNmE23d-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ktbd2O4gyoknrQNmE23d-71" value="Создание записи" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2140" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
