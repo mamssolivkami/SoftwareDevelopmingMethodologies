@@ -1,109 +1,168 @@
+from datetime import datetime, timedelta
 import unittest
-from datetime import datetime
-from Repositories import AppointmentRepository
-from Models import Appointment, Timetable, Master, Service, Client
+from SoftwareDevelopmingMethodologies.Models import Master, Client, Service, Timetable
+from SoftwareDevelopmingMethodologies.Models.Appointment import Appointment
 
 
-class TestAppointmentRepository(unittest.TestCase):
-    def setUp(self):
-        self.appointment_repo = AppointmentRepository.AppointmentRepository()
-
+class TestAppointment(unittest.TestCase):
     def test_validate_service(self):
-        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
-                               speciality="Парикмахерские услуги", category="Профи")
-        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
-        service = Service.Service(service_name="Маникюр",
-                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
-                                  speciality="Ногтевой сервис", category="Профи")
-        timetable = Timetable.Timetable(id=1, day_of_week="Суббота", hours=["09:00 - 18:00"], master=master)
-
-        # Создаем запись с неподходящей услугой для мастера
-        appointment = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-16 12:30", master=master,
-                                              client=client, service=service)
-
+        self.appointment_data1 = {
+            "id": 1,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Ногтевой сервис", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment1 = Appointment(**self.appointment_data1)
+        self.appointment_data2 = {
+            "id": 2,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment2 = Appointment(**self.appointment_data2)
+        # Проверка метода validate_service при корректных данных
+        self.assertTrue(self.appointment1.validate_service())
+        # Проверка метода validate_service при некорректных данных
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment)
+            self.appointment2.validate_service()
 
     def test_validate_future_date_and_time(self):
-        # Создаем запись с прошедшей датой и временем
-        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
-                               speciality="Ногтевой сервис", category="Профи")
-        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
-        service = Service.Service(service_name="Маникюр",
-                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
-                                  speciality="Ногтевой сервис", category="Профи")
-        appointment = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-11 12:00",
-                                               master=master,
-                                               client=client, service=service)
-        timetable = Timetable.Timetable(id=1, day_of_week="Понедельник", hours=["09:00 - 18:00"], master=master)
-
+        self.appointment_data1 = {
+            "id": 1,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Ногтевой сервис", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment1 = Appointment(**self.appointment_data1)
+        self.appointment_data2 = {
+            "id": 2,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now()).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment2 = Appointment(**self.appointment_data2)
+        # Проверка метода validate_future_date_and_time при корректных данных
+        self.assertTrue(self.appointment1.validate_future_date_and_time())
+        # Проверка метода validate_future_date_and_time при некорректных данных
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment)
+            self.appointment2.validate_future_date_and_time()
 
     def test_validate_past_date_and_time(self):
-        # Создаем запись с будущей датой и временем
-        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
-                               speciality="Ногтевой сервис", category="Профи")
-        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
-        service = Service.Service(service_name="Маникюр",
-                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
-                                  speciality="Ногтевой сервис", category="Профи")
-        appointment = Appointment.Appointment(id=1, status="Выполнена", date_and_time="2024-03-28 12:00",
-                                               master=master,
-                                               client=client, service=service)
-        timetable = Timetable.Timetable(id=1, day_of_week="Понедельник", hours=["09:00 - 18:00"], master=master)
-
+        self.appointment_data1 = {
+            "id": 1,
+            "status": "Выполнена",
+            "date_and_time": (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Ногтевой сервис", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment1 = Appointment(**self.appointment_data1)
+        self.appointment_data2 = {
+            "id": 2,
+            "status": "Выполнена",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment2 = Appointment(**self.appointment_data2)
+        # Проверка метода validate_past_date_and_time при корректных данных
+        self.assertTrue(self.appointment1.validate_past_date_and_time())
+        # Проверка метода validate_past_date_and_time при некорректных данных
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment)
+            self.appointment2.validate_past_date_and_time()
 
     def test_validate_appointment_timing(self):
-        # Создаем расписание работы мастера на понедельник с 9:00 до 18:00
-        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
-                               speciality="Ногтевой сервис", category="Профи")
-        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
-        service = Service.Service(service_name="Маникюр",
-                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
-                                  speciality="Ногтевой сервис", category="Профи")
-        timetable = Timetable.Timetable(id=1, day_of_week="Monday", hours=["09:00 - 18:00"], master=master)
-        self.appointment_repo.timetables[1] = timetable
-
-        # Создаем запись на понедельник в 10:00
-        appointment = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-25 10:00",
-                                              master=master,
-                                              client=client, service=service)
-
-        # Проверяем, что при вызове метода add не возникает исключений
-        try:
-            self.appointment_repo.add(appointment)
-        except ValueError as e:
-            self.fail(f"Было вызвано исключение: {e}")
+        self.appointment_data1 = {
+            "id": 1,
+            "status": "Запланирована",
+            "date_and_time": "2024-03-25 10:00",
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment1 = Appointment(**self.appointment_data1)
+        self.appointment_data2 = {
+            "id": 2,
+            "status": "Запланирована",
+            "date_and_time": "2024-03-28 10:00",
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment2 = Appointment(**self.appointment_data2)
+        timetable = Timetable.Timetable(id=1, day_of_week="Monday", hours=["09:00 - 18:00"], master=self.appointment1.master)
+        self.appointment1.timetables[1] = timetable
+        self.appointment2.timetables[1] = timetable
+        # Проверка метода validate_appointment_timing при корректных данных
+        self.assertTrue(self.appointment1.validate_appointment_timing())
+        # Проверка метода validate_appointment_timing при некорректных данных
+        with self.assertRaises(ValueError):
+            self.appointment2.validate_appointment_timing()
 
     def test_validate_client_appointment_relationship(self):
-        # Создаем несколько записей с одним и тем же клиентом
-        master = Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
-                               speciality="Ногтевой сервис", category="Профи")
-        client = Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321")
-        service = Service.Service(service_name="Маникюр",
-                                  description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
-                                  speciality="Ногтевой сервис", category="Профи")
-        timetable = Timetable.Timetable(id=1, day_of_week="Saturday", hours=["09:00 - 18:00"], master=master)
-        self.appointment_repo.timetables[1] = timetable
-
-        appointment1 = Appointment.Appointment(id=1, status="Запланирована", date_and_time="2024-03-16 14:00",
-                                               master=master,
-                                               client=client, service=service)
-
-        appointment2 = Appointment.Appointment(id=2, status="Запланирована", date_and_time="2024-03-16 14:00",
-                                               master=master,
-                                               client=client, service=service)
-
-        self.appointment_repo.add(appointment1)
-        self.appointment_repo.appointments[1] = appointment1
-
-        self.appointment_repo.appointments[2] = appointment2
-
+        self.appointment_data1 = {
+            "id": 1,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment1 = Appointment(**self.appointment_data1)
+        self.appointment_data2 = {
+            "id": 1,
+            "status": "Запланирована",
+            "date_and_time": (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d %H:%M"),
+            "master": Master.Master(id=1, first_name="Алина", last_name="Морковкина", phone_number="123456789",
+                                    speciality="Парикмахерские услуги", category="Профи"),
+            "client": Client.Client(id=1, first_name="Светлана", last_name="Сидорова", phone_number="987654321"),
+            "service": Service.Service(service_name="Маникюр",
+                                       description="Снятие покрытия, опил формы, нанесение нового покрытия", price=90,
+                                       speciality="Ногтевой сервис", category="Профи")
+        }
+        self.appointment2 = Appointment(**self.appointment_data2)
+        self.appointment1.appointments[self.appointment1.id] = self.appointment1
+        # Записываем клиента на ту же процедуру
+        self.appointment1.appointments[self.appointment1.id + 1] = self.appointment2
+        # Проверяем, что вызывается исключение ValueError
         with self.assertRaises(ValueError):
-            self.appointment_repo.add(appointment2)
+            self.appointment1.validate_client_appointment_relationship()
 
 
 if __name__ == '__main__':
