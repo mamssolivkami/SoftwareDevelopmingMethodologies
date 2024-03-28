@@ -1,5 +1,9 @@
+from SoftwareDevelopmingMethodologies.Models.Master import Master
+
+
 class MasterRepository:
     def __init__(self):
+        self.entity_class = Master
         self.masters = {}
 
     def add(self, master):

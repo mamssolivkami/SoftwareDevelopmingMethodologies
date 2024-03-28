@@ -1,4 +1,4 @@
-from Models.Service import Service
+from SoftwareDevelopmingMethodologies.Models.Service import Service
 
 
 class Master:

@@ -1,5 +1,9 @@
+from SoftwareDevelopmingMethodologies.Models.Client import Client
+
+
 class ClientRepository:
     def __init__(self):
+        self.entity_class = Client
         self.clients = {}
 
     def add(self, client):
